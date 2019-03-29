@@ -1,0 +1,3 @@
+<server>	
+	  <logging maxFileSize="40" maxFiles="50" traceFileName="trace.log" traceFormat="BASIC" traceSpecification="*=info:com.ibm.ws.jaxws*=finest:org.apache.cxf.services*=info" messageFileName="messages.log"/>
+</server>

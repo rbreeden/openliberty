@@ -1,0 +1,35 @@
+<server description="a server">
+
+	<featureManager>
+		<feature>javaee-7.0</feature>
+		<feature>apiDiscovery-1.0</feature>
+		<feature>restConnector-1.0</feature>
+		<feature>monitor-1.0</feature>
+		<feature>localConnector-1.0</feature>
+		<feature>adminCenter-1.0</feature>
+	</featureManager>
+
+	<wasJmsEndpoint id="InboundJmsEndpoint" wasJmsPort="7278" wasJmsSSLPort="7288">
+	</wasJmsEndpoint>
+
+	<include location="basicRegistry.xml"/>
+	<include location="databaseConnections.xml"/>
+	<include location="headerConfig.xml"/>
+	<include location="httpEndpoints.xml"/>
+	<include location="iiopEndpoints.xml"/>
+	<include location="logging.xml"/>
+	<include location="mqConnections.xml"/>
+	<include location="objectCaches.xml"/>
+	<include location="security.xml"/>
+	
+	<keyStore id="defaultKeyStore" password="changeit" />
+	<keyStore id="defaultTrustStore" password="changeit" />
+	<sslDefault sslRef="defaultSSLSettings"/>
+	<ssl id="defaultSSLSettings" keyStoreRef="defaultKeyStore" sslProtocol="SSL_TLSv2" trustStoreRef="defaultTrustStore"/>
+	
+	<transaction totalTranLifetimeTimeout="340s"/>
+	<webApplication location="rest.war" contextRoot="LibertyProject"><application-bnd> <security-role name="bogusRoleName" /> </application-bnd> 
+		</webApplication>
+
+
+</server>

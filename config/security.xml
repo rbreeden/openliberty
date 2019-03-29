@@ -1,0 +1,6 @@
+<server>
+    <featureManager>
+        <feature>wsSecurity-1.1</feature>
+    </featureManager>
+    <wsSecurityClient ws-security.callback-handler="com.ibm.websphere.wssecurity.callbackhandler.UNTGenerateCallbackHandler" ws-security.password="password" ws-security.username="user"/> 
+</server>

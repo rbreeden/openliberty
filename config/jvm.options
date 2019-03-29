@@ -1,0 +1,6 @@
+# WebSphere Application Server Liberty
+# This file contains options that are passed directly to the JVM on startup
+# See the InfoCenter for full documentation
+
+# Uncomment the following line to set a system property
+#-Dcom.ibm.example.system.property=ExampleValue

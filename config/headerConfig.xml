@@ -1,0 +1,12 @@
+<server>
+    <featureManager>
+        <feature>servlet-3.1</feature>
+    </featureManager>
+
+    <webContainer httpsIndicatorHeader="X-Forwarded-Proto"></webContainer>
+
+    <mimeTypes>
+        <type>svg=image/svg+xml</type>
+        <type>manifest=text/cache-manifest</type>
+    </mimeTypes>
+</server>

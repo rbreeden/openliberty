@@ -1,0 +1,9 @@
+<server>
+	<featureManager>
+		<feature>ejbRemote-3.2</feature>
+	</featureManager>
+
+	<iiopEndpoint id="defaultIiopEndpoint" iiopPort="2810">
+		<iiopsOptions iiopsPort="9402" sslRef="defaultSSLSettings"/>
+	</iiopEndpoint>
+</server>

@@ -1,0 +1,14 @@
+<server>
+    <featureManager>
+        <feature>appSecurity-2.0</feature>
+    </featureManager>
+
+
+    <basicRegistry id="default" ignoreCaseForAuthentication="true" realm="basic">
+        <user name="user" password="password"/> <!-- password -->
+     </basicRegistry>
+
+    <administrator-role>
+        <user>admin</user>
+    </administrator-role>
+</server>

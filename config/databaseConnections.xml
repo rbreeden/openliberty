@@ -1,0 +1,31 @@
+<server>
+	<featureManager>
+		<feature>jdbc-4.1</feature>
+	</featureManager>
+
+	<!-- Libraries -->
+	<library id="SQLServerLib">
+		<fileset dir="${server.config.dir}/drivers" includes="sqljdbc4.jar" />
+	</library>
+	<library id="OracleLib">
+		<fileset dir="${server.config.dir}/drivers" includes="ojdbc6.jar" />
+	</library>
+	<library id="DB2Lib">
+		<fileset dir="${server.config.dir}/drivers" includes="db2jcc.jar db2jcc_license_cisuz.jar db2jcc_license_cu.jar" />
+	</library>
+
+	<!-- Data Sources -->
+
+	<dataSource commitOrRollbackOnCleanup="rollback" id="mydb" isolationLevel="TRANSACTION_READ_COMMITTED"
+		jndiName="jdbc/mydb" queryTimeout="60" supplementalJDBCTrace="false"
+		type="javax.sql.ConnectionPoolDataSource">
+		<jdbcDriver javax.sql.ConnectionPoolDataSource="com.microsoft.sqlserver.jdbc.SQLServerConnectionPoolDataSource"
+			libraryRef="SQLServerLib" />
+		<connectionManager agedTimeout="0" maxIdleTime="1800s" maxPoolSize="10"
+			minPoolSize="1" reapTime="180s" />
+		<properties.microsoft.sqlserver databaseName="mydb"
+			password="password"
+	        		user="user" serverName="MYDB"/>
+	</dataSource>
+
+</server>

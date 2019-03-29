@@ -1,0 +1,25 @@
+<server>
+	<featureManager>
+		<feature>wmqJmsClient-2.0</feature>
+	</featureManager>
+
+	<variable name="wmqJmsClient.rar.location" value="${server.config.dir}/mq/wmq.jmsra.rar"/>
+
+	<connectionManager id="ConMgr" maxPoolSize="10"/>
+
+	<wmqJmsClient maxConnections="400"/>
+
+	<jmsConnectionFactory connectionManagerRef="ConMgr" jndiName="mq/CF">
+		<properties.wmqJms channel="MQ.CHNL" hostName="hostname" port="1430"
+			queueManager="MYQUEUEMANAGER" transportType="CLIENT" />
+	</jmsConnectionFactory>
+  
+	<jmsQueue id="MYQUEUE" jndiName="mq/MYQUEUE">
+		<properties.wmqJms CCSID="1208" baseQueueName="MYQUEUE" encoding="NATIVE" targetClient="JMS"/>
+	</jmsQueue>
+ 
+	<jmsActivationSpec id="mq/MQAS_MYQUEUE"> <properties.wmqJms destinationRef="MYQUEUE" 
+		hostName="host" port="1430" queueManager="MYQUEUEMANAGER" transportType="CLIENT" /> 
+	</jmsActivationSpec>
+
+ </server>
